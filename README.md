@@ -15,20 +15,23 @@ Project Dependencies:
 
 ## Full-Stack Overview
 
-This repository contains both the backend and frontend for a simple Task Manager application:
+
+## Full-Stack Overview
+
+This repository contains the backend for a simple Task Manager application. The frontend (React app) is maintained in a separate repository.
 
 - **Backend:** ASP.NET Core 9.0 (DemoServer) implements a clean architecture for managing tasks, with Models, Interfaces, Database, and Validations projects.
-- **Frontend:** A simple React app (in a separate folder/repo) consumes the DemoServer API, providing a user interface for task management.
+- **Frontend:** A simple React app (in a separate repository) consumes the DemoServer API, providing a user interface for task management.
 
 The React app communicates with the DemoServer API via HTTP endpoints, allowing users to view, create, update, and delete tasks. The backend handles business logic, validation, and data storage (mock database).
 
 ### How It Works
 
-1. The React app sends HTTP requests to the DemoServer API endpoints (see below).
+1. The React app (from its own repository) sends HTTP requests to the DemoServer API endpoints (see below).
 2. DemoServer processes requests, validates data, and interacts with the mock database.
 3. Responses are returned to the React app for display and further interaction.
 
-This full-stack setup demonstrates separation of concerns, clean architecture, and modern web development best practices.
+This setup demonstrates separation of concerns, clean architecture, and modern web development best practices.
 
 
 
