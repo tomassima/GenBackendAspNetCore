@@ -7,13 +7,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoServer", "DemoServer\De
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DemoServer", "DemoServer", "{7C45CFD4-DF2C-4FA8-BA46-5B6E31B7D9C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "DemoServer\Interfaces\Interfaces.csproj", "{B00CF561-5B2A-4301-AAA5-F133B79127B0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{B00CF561-5B2A-4301-AAA5-F133B79127B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "DemoServer\Models\Models.csproj", "{A56E412C-38EE-4DAB-99C2-1C64EE63C2FE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{A56E412C-38EE-4DAB-99C2-1C64EE63C2FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "DemoServer\Database\Database.csproj", "{621F8BA2-0781-43ED-85A0-9FCD89626989}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Database", "Database\Database.csproj", "{621F8BA2-0781-43ED-85A0-9FCD89626989}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validations", "DemoServer\Validations\Validations.csproj", "{1C538537-7D23-4597-B82E-6F056D1C4EE3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Validations", "Validations\Validations.csproj", "{1C538537-7D23-4597-B82E-6F056D1C4EE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{1E492447-79E8-443F-A897-9D9AE3705B72}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -44,6 +46,10 @@ Global
 		{1C538537-7D23-4597-B82E-6F056D1C4EE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1C538537-7D23-4597-B82E-6F056D1C4EE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1C538537-7D23-4597-B82E-6F056D1C4EE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1E492447-79E8-443F-A897-9D9AE3705B72}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1E492447-79E8-443F-A897-9D9AE3705B72}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1E492447-79E8-443F-A897-9D9AE3705B72}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1E492447-79E8-443F-A897-9D9AE3705B72}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{7F718378-2CBA-4FB1-BBBF-FC7C3C8EDFD3} = {7C45CFD4-DF2C-4FA8-BA46-5B6E31B7D9C5}
