@@ -12,10 +12,6 @@ Project Dependencies:
 - Database → Interfaces
 - Validations → Models, Interfaces
 
-
-## Full-Stack Overview
-
-
 ## Full-Stack Overview
 
 This repository contains the backend for a simple Task Manager application. The frontend (React app) is maintained in a separate repository.
