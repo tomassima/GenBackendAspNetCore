@@ -147,16 +147,3 @@ Below are the main API endpoints for task management. These endpoints are consum
 ## License
 
 This project is licensed under the MIT License. See the LICENSE file for details.
-
-## Testing
-
-The project includes comprehensive unit tests covering:
-- Database operations
-- Task validation
-- API endpoints
-- Edge cases and error conditions
-
-Run tests with:
-```bash
-dotnet test --collect:"XPlat Code Coverage"
-```
