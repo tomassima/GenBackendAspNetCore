@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Http;
 using Models;
 using Interfaces;
+using Microsoft.Extensions.Logging;
 
 namespace DemoServer.Controllers;
 
@@ -15,11 +16,14 @@ public class TaskController : ControllerBase
     private readonly IDatabase<TaskEntity> database;
     private readonly IEntityValidation<TaskEntity> validation;
     private readonly object lockObject = new object();
+    // Add structured logging
+    private readonly ILogger<TaskController> _logger;
 
-    public TaskController(IDatabase<TaskEntity> database, IEntityValidation<TaskEntity> validation)
+    public TaskController(IDatabase<TaskEntity> database, IEntityValidation<TaskEntity> validation, ILogger<TaskController> logger)
     {
         this.database = database;
         this.validation = validation;
+        _logger = logger;
     }
 
     /// <summary>
@@ -59,6 +63,8 @@ public class TaskController : ControllerBase
             if (validationResult.isValid)
             {
                 database.AddOrUpdate(entity);
+                // Log important operations
+                _logger.LogInformation("Task {TaskId} created", entity.Key);
                 return Ok();
             }
             else
@@ -81,6 +87,11 @@ public class TaskController : ControllerBase
     public ActionResult Delete(Guid key)
     {
         var deletionResult = database.Delete(key);
-        return deletionResult ? Ok() : BadRequest($"No Task with key:{key} found");
+        if (deletionResult)
+        {
+            _logger.LogInformation("Task {TaskId} deleted successfully", key);
+            return Ok();
+        }
+        return BadRequest($"No Task with key:{key} found");
     }
 }

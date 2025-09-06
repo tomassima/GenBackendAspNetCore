@@ -2,6 +2,7 @@ using Models;
 using Interfaces;
 using Database;
 using Validations;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,6 +19,14 @@ builder.Services.AddSwaggerGen(options =>
 // Register our services
 builder.Services.AddSingleton<IDatabase<TaskEntity>, MockDatabase<TaskEntity>>();
 builder.Services.AddSingleton<IEntityValidation<TaskEntity>, TaskEntityValidation>();
+
+// Add API versioning support
+builder.Services.AddApiVersioning(options =>
+{
+    options.DefaultApiVersion = new ApiVersion(1, 0);
+    options.AssumeDefaultVersionWhenUnspecified = true;
+    options.ReportApiVersions = true;
+});
 
 var app = builder.Build();
 

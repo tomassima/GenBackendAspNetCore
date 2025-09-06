@@ -13,7 +13,8 @@ public class TaskControllerTests
     {
         var db = new MockDatabase<TaskEntity>();
         var validation = new TaskEntityValidation();
-        var controller = new TaskController(db, validation);
+        var mockLogger = new MockLogger<TaskController>();
+        var controller = new TaskController(db, validation, mockLogger);
 
         var t = new TaskEntity
         {
@@ -42,7 +43,8 @@ public class TaskControllerTests
     {
         var db = new MockDatabase<TaskEntity>();
         var validation = new TaskEntityValidation();
-        var controller = new TaskController(db, validation);
+        var mockLogger = new MockLogger<TaskController>();
+        var controller = new TaskController(db, validation, mockLogger);
 
         var t = new TaskEntity
         {
@@ -68,7 +70,8 @@ public class TaskControllerTests
     {
         var db = new MockDatabase<TaskEntity>();
         var validation = new TaskEntityValidation();
-        var controller = new TaskController(db, validation);
+        var mockLogger = new MockLogger<TaskController>();
+        var controller = new TaskController(db, validation, mockLogger);
 
         var t0 = new TaskEntity
         {
@@ -104,7 +107,8 @@ public class TaskControllerTests
     {
         var db = new MockDatabase<TaskEntity>();
         var validation = new TaskEntityValidation();
-        var controller = new TaskController(db, validation);
+        var mockLogger = new MockLogger<TaskController>();
+        var controller = new TaskController(db, validation, mockLogger);
 
         var t = new TaskEntity
         {
@@ -119,5 +123,7 @@ public class TaskControllerTests
         controller.Delete(t.Key);
 
         Assert.AreEqual(0, db.GetValues().Count());
+        Assert.AreEqual(1, mockLogger.LogMessages.Count);
+        Assert.IsTrue(mockLogger.LogMessages[0].Contains($"Task {t.Key} deleted successfully"));
     }
 }

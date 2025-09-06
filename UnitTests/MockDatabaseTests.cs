@@ -127,4 +127,11 @@ public class MockDatabaseTests
         Assert.AreEqual(t.Priority, tresult.Priority);
         Assert.AreEqual(t.Status, tresult.Status);
     }
+
+    [TestMethod]
+    public void TestGetValuesEmpty()
+    {
+        var db = new MockDatabase<TaskEntity>();
+        Assert.AreEqual(0, db.GetValues().Count());
+    }
 }
