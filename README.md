@@ -64,10 +64,7 @@ This setup demonstrates separation of concerns, clean architecture, and modern w
    dotnet build
    ```
 
-3. Run the tests:
-   ```bash
-   dotnet test
-   ```
+3. Run the tests (see the Testing section below for details).
 
 4. Run the application:
    ```bash
