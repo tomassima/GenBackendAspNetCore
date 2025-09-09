@@ -36,19 +36,18 @@ A simple task management API built with ASP.NET Core 9.0 demonstrating clean arc
   cd GenBackendAspNetCore
   ```
 
-1. Build the solution:
+2. Build the solution:
 
   ```bash
   dotnet build
   ```
-
-1. Run the tests:
+3. Run the tests:
 
   ```bash
   dotnet test --collect:"XPlat Code Coverage"
   ```
 
-1. Run the application (from the DemoServer folder):
+4. Run the application (from the DemoServer folder):
 
   ```bash
   cd DemoServer
